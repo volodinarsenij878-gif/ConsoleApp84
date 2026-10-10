@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program40
+{
+    internal class Program
+    {
+        static void Main ()
+        {
+            int value = -16;
+            int shift = 2;
+            int result = value >> shift;
+
+            // Показываем младшие 8 бит результата
+            string binResult = Convert.ToString(result & 0xFF, 2).PadLeft(8, '0');
+
+            Console.WriteLine($"(-16) >> {shift} = {result}");
+            Console.WriteLine($"Младшие 8 бит результата: {binResult}");
+
+            // Для сравнения: если бы это было беззнаковое число, сдвиг был бы другим
+            uint uValue = 16;
+            uint uResult = uValue >> shift;
+            Console.WriteLine($"(16) >> {shift} (для uint) = {uResult}");
+        }
+    }
+}
